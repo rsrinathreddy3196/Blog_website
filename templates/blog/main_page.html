@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  My Blog
+{% endblock  %}
+
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post.css" %}">
+  <link rel="stylesheet" href="{% static "blog/main_page.css" %}">
+{% endblock  %}
+
+{% block content %}
+
+
+  <section id="welcome">
+    <header>
+      <img src="{% static "blog/images/pic.jpg" %}" alt="The Owner of the blog">
+      <h2>Owners Blog</h2> 
+    </header>
+    <p>Hi, I am Srinath and I love programming!</p>
+  </section>
+
+  <section id="latest-posts">
+    <h2>My Latest Posts</h2>
+    <ul>
+    {% for post in posts  %}
+      {% include "blog/includes/post.html" %}
+    {% endfor %}  
+    </ul>
+    
+
+  </section>
+
+  <section id="about">
+    <h2>What I Do</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, esse! Quam dolore
+       dolores, distinctio repudiandae debitis laborum, soluta, </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+      Alias in veniam iste ullam mollitia corrupti molestias suscipit.
+      Reiciendis cupiditate voluptate velit assumenda fugiat vero nulla repellat eveniet tempore, suscipit minus.   
+    </p>
+  </section>
+
+{% endblock  %}
